@@ -7,6 +7,7 @@ The web application using JSF 2, Spring and JPA.
 - Spring
 - JPA/Hibernate
 - Apache Tomcat 7 server
+- [PrettyFaces](http://ocpsoft.org/prettyfaces/) pour pretty URLs.
 - [Zurb Foundation 5](http://foundation.zurb.com/)
 
 #### TODO
