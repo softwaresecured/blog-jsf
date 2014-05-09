@@ -21,5 +21,5 @@ Run `mvn clean install` to download all the dependencies and initialize the proj
 To run on Tomcat server:
 
 - either copy the generated `war` (it is in the project's **target** directory) into Tomcat's webapp folder
-- or deploy it in a standard way via its Tomcat's application manager interface.
+- or deploy it in a standard way via Tomcat's application manager interface.
 - or run the project directly from your favorite IDE (usually via `Project-Run` menu).
