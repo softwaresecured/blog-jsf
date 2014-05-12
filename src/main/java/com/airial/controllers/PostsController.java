@@ -1,26 +1,27 @@
 package com.airial.controllers;
 
+import com.airial.domain.Post;
+import com.airial.service.PostService;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import java.util.List;
 
-
-/**
- * Created by scambour on 09/05/14.
- */
+@Component
 @ManagedBean
 @RequestScoped
 @URLMapping(id = "posts", pattern = "/posts/", viewId = "/faces/posts/list.xhtml")
 public class PostsController {
 
-    private String message="Hello from Posts list page";
+    @Autowired
+    private PostService postService;
 
-    public String getMessage() {
-        return message;
-    }
+    private List<Post> posts;
 
-    public void setMessage(String message) {
-        this.message = message;
+    public List<Post> getPosts() {
+        return postService.findAll();
     }
 }

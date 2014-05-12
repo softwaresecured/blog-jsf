@@ -2,17 +2,37 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 
 <ui:composition template="/application.xhtml">
     <ui:define name="title">JSF Blog | Posts</ui:define>
+
     <div class="large-12 columns">
-        <div class="panel">
-            <ui:define name="content">
-                <h3>#{postsController.message}</h3>
-                <p><h:link value="Home" outcome="/index"/></p>
-            </ui:define>
-        </div>
+        <ui:define name="content">
+            <h3>Posts list</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Post Title</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <ui:repeat value="#{postsController.posts}" var="post">
+                    <tr>
+                        <td>#{post.title}</td>
+                        <td><a href="#">Comments</a></td>
+                        <td><a href="#">Edit</a></td>
+                        <td><a href="#">Delete</a></td>
+                    </tr>
+                </ui:repeat>
+                </tbody>
+            </table>
+
+            <p><h:link value="Home" outcome="/index"/></p>
+        </ui:define>
     </div>
 </ui:composition>
 
