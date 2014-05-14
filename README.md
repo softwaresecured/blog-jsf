@@ -1,7 +1,7 @@
 JSF, Spring, JPA CRUD blog application
 ---
 
-The web application using JSF 2, Spring and JPA.
+The web application using JSF 2, PrettyFaces, Spring and JPA.
 
 #### Used frameworks
 - Spring
@@ -10,10 +10,10 @@ The web application using JSF 2, Spring and JPA.
 - [PrettyFaces](http://ocpsoft.org/prettyfaces/) pour pretty URLs.
 - [Zurb Foundation 5](http://foundation.zurb.com/)
 
-#### TODO
+#### TODO's
 
-- add domain classes
-- bean
+- add navigation rules and views for other CRUD actions (`edit`, `new`, `create`, `delete`).
+- tests
 
 
 Run `mvn clean install` to download all the dependencies and initialize the project.
