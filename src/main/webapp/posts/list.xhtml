@@ -31,7 +31,7 @@
                             </pretty:link>
                         </td>
                         <td>
-                            <pretty:link mappingId="postEdit">
+                            <pretty:link mappingId="edit">
                                 <f:param value="#{post.id}"/>
                                 Edit
                             </pretty:link>
@@ -42,7 +42,10 @@
                 </tbody>
             </table>
 
-            <p><h:link value="Home" outcome="/index"/></p>
+            <p>
+                <h:link value="New post" outcome="/posts/new"/> |
+                <h:link value="Home" outcome="/index"/>
+            </p>
         </ui:define>
     </div>
 </ui:composition>

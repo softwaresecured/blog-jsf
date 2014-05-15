@@ -4,6 +4,7 @@ import com.airial.domain.Post;
 import com.airial.service.PostService;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
 import com.ocpsoft.pretty.faces.annotation.URLMappings;
+import com.ocpsoft.pretty.faces.annotation.URLQueryParameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,9 +15,10 @@ import java.util.List;
 @Component
 @ManagedBean
 @RequestScoped
-@URLMappings(mappings={
+@URLMappings(mappings = {
         @URLMapping(id = "posts", pattern = "/posts/", viewId = "/faces/posts/list.xhtml"),
-        @URLMapping(id = "postEdit", pattern = "/posts/#{postsController.id}/edit", viewId = "/faces/posts/edit.xhtml")
+        @URLMapping(id = "edit", pattern = "/posts/#{id}/edit", viewId = "/faces/posts/edit.xhtml"),
+        @URLMapping(id = "new", pattern = "/posts/new", viewId = "/faces/posts/new.xhtml")
 })
 public class PostsController {
 
@@ -25,15 +27,15 @@ public class PostsController {
 
     private List<Post> posts;
 
-    private Post post;
+    private Post post = new Post();
 
+    @URLQueryParameter("id")
     private Long id;
 
     public List<Post> getPosts() {
+        System.out.println("+++++++++++++++ ID: " + getId());
         return postService.findAll();
     }
-
-
 
     public Long getId() {
         return id;
@@ -44,7 +46,20 @@ public class PostsController {
     }
 
     public Post getPost() {
-        return postService.findById(id);
+        return post;
     }
 
+    public void setPost(Post post) {
+        this.post = post;
+    }
+
+    public String create(final Post post) {
+        postService.save(post);
+        return "pretty:posts";
+    }
+
+    public String update(final Post post) {
+        postService.save(post);
+        return "pretty:posts";
+    }
 }
