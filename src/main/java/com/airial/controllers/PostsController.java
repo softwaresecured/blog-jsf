@@ -33,7 +33,6 @@ public class PostsController {
     private Long id;
 
     public List<Post> getPosts() {
-        System.out.println("+++++++++++++++ ID: " + getId());
         return postService.findAll();
     }
 
