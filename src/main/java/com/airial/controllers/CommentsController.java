@@ -7,6 +7,7 @@ package com.airial.controllers;
 import com.airial.domain.Comment;
 import com.airial.domain.Post;
 import com.airial.service.PostService;
+import com.google.common.collect.Lists;
 import com.ocpsoft.pretty.faces.annotation.URLAction;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
 import com.ocpsoft.pretty.faces.annotation.URLMappings;
@@ -31,7 +32,7 @@ public class CommentsController {
 
     private Post post;
 
-    private List<Comment> comments = new ArrayList<>();
+    private List <Comment> comments = new ArrayList<>();
 
     private Long post_id;
 
@@ -49,8 +50,11 @@ public class CommentsController {
     }
 
     public List<Comment> getComments() {
-        comments.addAll(post.getComments());
-        return comments;
+        return Lists.newArrayList(post.getComments());
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 
     public Long getPost_id() {
