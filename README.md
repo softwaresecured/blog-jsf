@@ -13,6 +13,7 @@ The web application using JSF 2, PrettyFaces, Spring and JPA.
 #### TODO's
 
 - add navigation rules and views for other CRUD actions (`edit`, `new`, `create`, `delete`).
+- fix post id initialization/skip for new action
 - tests
 
 
