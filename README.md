@@ -20,6 +20,7 @@ The web application using JSF 2, PrettyFaces, Spring and JPA.
 #### TODO's
 
 - add CRUD for Comment resource 
+- add flash messages for succes and validation errors
 - tests
 
 #### Running
