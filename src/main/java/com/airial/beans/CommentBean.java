@@ -1,4 +1,4 @@
-package com.airial.controllers;
+package com.airial.beans;
 
 /**
  * Created by scambour on 14/05/14.
@@ -23,9 +23,9 @@ import java.util.List;
 @ManagedBean
 @RequestScoped
 @URLMappings(mappings={
-        @URLMapping(id = "comments", pattern = "/posts/#{commentsController.post_id}/comments", viewId = "/faces/posts/show.xhtml")
+        @URLMapping(id = "comments", pattern = "/posts/#{commentBean.post_id}/comments", viewId = "/faces/posts/show.xhtml")
 })
-public class CommentsController {
+public class CommentBean {
 
     @Autowired
     private PostService postService;

@@ -21,7 +21,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <ui:repeat value="#{postsController.posts}" var="post">
+                <ui:repeat value="#{postBean.posts}" var="post">
                     <h:form>
                         <tr>
                             <td>#{post.title}</td>
@@ -32,13 +32,13 @@
                                 </pretty:link>
                             </td>
                             <td>
-                                <pretty:link mappingId="edit">
+                                <pretty:link mappingId="postEdit">
                                     <f:param value="#{post.id}"/>
                                     Edit
                                 </pretty:link>
                             </td>
                             <td>
-                                <h:commandLink value="Delete" action="#{postsController.destroy(post)}" styleClass="button radius small alert"/>
+                                <h:commandLink value="Delete" action="#{postBean.destroy(post)}" styleClass="button radius small alert"/>
                             </td>
                         </tr>
                     </h:form>

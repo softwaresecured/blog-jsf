@@ -12,7 +12,7 @@
         <ui:define name="content">
             <p>
                 <strong>Post Title:</strong>
-                #{commentsController.post.title}
+                #{commentBean.post.title}
             </p>
 
             <h3>Post comments:</h3>
@@ -25,7 +25,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <ui:repeat value="#{commentsController.comments}" var="comment">
+                <ui:repeat value="#{commentBean.comments}" var="comment">
                     <tr>
                         <td>#{comment.text}</td>
                         <td><a href="#">Edit</a></td>

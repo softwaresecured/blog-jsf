@@ -20,10 +20,10 @@
                                 <label for="right-label" class="right inline">Title</label>
                             </div>
                             <div class="small-9 columns">
-                                <h:inputText value="#{postsController.post.title}" required="true"/>
+                                <h:inputText value="#{postBean.post.title}" required="true"/>
                                 <p>
                                     <h:commandButton value="Create" type="submit"
-                                                     action="#{postsController.create(postsController.post)}"
+                                                     action="#{postBean.create(postBean.post)}"
                                                      styleClass="button radius"/>
                                 </p>
                             </div>
