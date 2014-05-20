@@ -27,5 +27,5 @@ To run on Tomcat server:
 
 #### Gotchas
 
-JSF processes all the actions as POST requests. So all the `posting`tags like `h:commandLink` or `h:commandButton`should be placed  
-inside a `h:form` element, that requires extra work with CSS. T's why links to delete a post are nor so nicely aligned :).
+JSF processes all the actions as POST requests. So all the `posting`tags like `h:commandLink` or `h:commandButton`should be placed
+inside a `h:form` element, that requires some extra work with CSS. That's why the links to delete a post are not so nicely aligned :).
