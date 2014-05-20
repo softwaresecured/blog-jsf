@@ -22,28 +22,33 @@
                 </thead>
                 <tbody>
                 <ui:repeat value="#{postsController.posts}" var="post">
-                    <tr>
-                        <td>#{post.title}</td>
-                        <td>
-                            <pretty:link mappingId="comments">
-                                <f:param value="#{post.id}"/>
-                                Comments
-                            </pretty:link>
-                        </td>
-                        <td>
-                            <pretty:link mappingId="edit">
-                                <f:param value="#{post.id}"/>
-                                Edit
-                            </pretty:link>
-                        </td>
-                        <td><a href="#">Delete</a></td>
-                    </tr>
+                    <h:form>
+                        <tr>
+                            <td>#{post.title}</td>
+                            <td>
+                                <pretty:link mappingId="comments">
+                                    <f:param value="#{post.id}"/>
+                                    Comments
+                                </pretty:link>
+                            </td>
+                            <td>
+                                <pretty:link mappingId="edit">
+                                    <f:param value="#{post.id}"/>
+                                    Edit
+                                </pretty:link>
+                            </td>
+                            <td>
+                                <h:commandLink value="Delete" action="#{postsController.destroy(post)}" styleClass="button radius small alert"/>
+                            </td>
+                        </tr>
+                    </h:form>
                 </ui:repeat>
                 </tbody>
             </table>
 
             <p>
-                <h:link value="New post" outcome="/posts/new"/> |
+                <h:link value="New post" outcome="/posts/new"/>
+                |
                 <h:link value="Home" outcome="/index"/>
             </p>
         </ui:define>

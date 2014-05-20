@@ -61,4 +61,9 @@ public class PostsController {
         postService.save(post);
         return "pretty:posts";
     }
+
+    public String destroy(Post post) {
+        postService.destroy(post);
+        return "pretty:posts";
+    }
 }
