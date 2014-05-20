@@ -12,7 +12,7 @@ The web application using JSF 2, PrettyFaces, Spring and JPA.
 
 #### TODO's
 
-- fix post id initialization/skip for new and edit actions
+- add CRUD for Comment resource 
 - tests
 
 
@@ -29,3 +29,6 @@ To run on Tomcat server:
 
 JSF processes all the actions as POST requests. So all the `posting`tags like `h:commandLink` or `h:commandButton`should be placed
 inside a `h:form` element, that requires some extra work with CSS. That's why the links to delete a post are not so nicely aligned :).
+
+It seems like it is not possible to process several views in the same bean (controller) like Ruby on Rails does. That's why 
+edit/update actions were extracted into a separate PostEditBean class.
