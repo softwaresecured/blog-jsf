@@ -10,6 +10,13 @@ The web application using JSF 2, PrettyFaces, Spring and JPA.
 - [PrettyFaces](http://ocpsoft.org/prettyfaces/) pour pretty URLs.
 - [Zurb Foundation 5](http://foundation.zurb.com/)
 
+#### Database
+
+- The project uses the [H2 embedded database](http://www.h2database.com/html/main.html). So no additional DB configuration required.
+- `shema.sql` file contains the database creation script
+- `test-data.sql` creates some data fixtures
+- both `schema.sql` and `test-data.sql` are referenced in `datasource-tx-jpa.xml`, **their declaration order is IMPORTANT !**
+
 #### TODO's
 
 - add CRUD for Comment resource 
