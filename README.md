@@ -22,9 +22,9 @@ The web application using JSF 2, PrettyFaces, Spring and JPA.
 - add CRUD for Comment resource 
 - tests
 
+#### Running
 
 Run `mvn clean install` to download all the dependencies and initialize the project.
-
 
 To run on Tomcat server:
 
