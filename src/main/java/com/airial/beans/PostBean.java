@@ -39,7 +39,7 @@ public class PostBean {
         this.post = post;
     }
 
-    public String create(final Post post) {
+    public String create(Post post) {
         postService.save(post);
         return "pretty:posts";
     }
