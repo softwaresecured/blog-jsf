@@ -42,6 +42,7 @@ public class PostServiceImpl implements PostService {
 
 
     @Override
+    @Transactional
     public Post save(Post post) {
         return postRepository.save(post);
     }
