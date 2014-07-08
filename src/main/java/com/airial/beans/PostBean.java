@@ -7,12 +7,10 @@ import com.ocpsoft.pretty.faces.annotation.URLMappings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import java.util.List;
 
 @Component
-@ManagedBean
 @RequestScoped
 @URLMappings(mappings = {
         @URLMapping(id = "posts", pattern = "/posts/", viewId = "/faces/posts/list.xhtml"),
