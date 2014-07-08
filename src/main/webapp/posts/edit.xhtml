@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://xmlns.jcp.org/jsf/facelets
-http://xmlns.jcp.org/jsf/facelets ">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <ui:composition template="/application.xhtml">
     <ui:define name="title">JSF Blog | Edit Post</ui:define>
@@ -14,14 +11,14 @@ http://xmlns.jcp.org/jsf/facelets ">
         <ui:define name="content">
             <div class="small-8">
                 <h3>Edit Post</h3>
-                <h:messages/>
-                <h:form>
+                <h:messages errorClass="alert-box alert radius"/>
+                <h:form prependId="false">
                     <div class="row">
                         <div class="small-3 columns">
-                            <label for="right-label" class="right inline">Title</label>
+                            <label for="title" class="right inline">Title</label>
                         </div>
                         <div class="small-9 columns">
-                            <h:inputText value="#{postEditBean.post.title}" required="true"/>
+                            <h:inputText id="title" value="#{postEditBean.post.title}" required="true"/>
                             <p>
                                 <h:commandButton value="Update" type="submit"
                                                  action="#{postEditBean.update(postEditBean.post)}"
