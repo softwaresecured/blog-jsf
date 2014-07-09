@@ -25,9 +25,7 @@ public class Post implements Serializable {
     private int version;
 
     @Column(name = "title")
-    //TODO
-    // find a way to use either Bean or Hibernate validation annotation
-    // actually validation is made with 'required' option in the views
+    @NotEmpty(message = "Title should not be empty")
     private String title;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "post", cascade = CascadeType.ALL)
