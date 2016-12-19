@@ -172,48 +172,6 @@
                 </plugins>
             </build>
         </profile>
-        <profile>
-            <id>weblogic1213Jsp</id>
-
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-
-            <build>
-                <plugins>
-                    <plugin>
-                        <!-- This is the configuration for the
-                             weblogic-maven-plugin
-                        -->
-                        <groupId>com.oracle.weblogic</groupId>
-                        <artifactId>wls-maven-plugin</artifactId>
-                        <version>12.1.3.0</version>
-                        <configuration>
-                            <middlewareHome>C:/Oracle/Middleware/Oracle_Home</middlewareHome>
-                        </configuration>
-                        <executions>
-                            <!-- Execute the appc goal during the package phase -->
-                            <execution>
-                                <id>wls-appc</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>appc</goal>
-                                </goals>
-                                <configuration>
-                                    <continueCompilation>true</continueCompilation>
-                                    <writeInferredDescriptors>true</writeInferredDescriptors>
-                                    <commentary>true</commentary>
-                                    <lineNumbers>true</lineNumbers>
-                                    <verboseJavac>true</verboseJavac>
-                                    <idlVerbose>true</idlVerbose>
-                                    <source>${project.build.directory}/${project.artifactId}-${project.version}.${project.packaging}</source>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
     </profiles>
 
     <repositories>
