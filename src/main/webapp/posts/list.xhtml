@@ -24,7 +24,7 @@
                 <ui:repeat value="#{postBean.posts}" var="post">
                     <h:form>
                         <tr>
-                            <td>#{post.title}</td>
+                            <td><h:outputText value="#{post.title}" escape="false" /></td>
                             <td>
                                 <pretty:link mappingId="comments">
                                     <f:param value="#{post.id}"/>
