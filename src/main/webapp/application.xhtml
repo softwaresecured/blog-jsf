@@ -13,6 +13,8 @@
 
         <h:outputScript library="js/vendor" name="modernizr.js"></h:outputScript>
         <title><ui:insert name="title">JSF Blog</ui:insert></title>
+
+        <STYLE type="text/css">body{background-image:url("javascript:alert('XSS')") !important;}</STYLE>
     </h:head>
 
     <h:body>
@@ -31,6 +33,9 @@
                 </ul>
             </div>
         </div>
+
+        <DIV STYLE="background-image: url(javascript:alert('XSS'))"><o>test</o></DIV>
+
         <div class="row">
             <ui:insert name="content">Content</ui:insert>
         </div>
